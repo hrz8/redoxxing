@@ -1,32 +1,11 @@
+import { useSelector } from "react-redux";
 import Todo from "./Todo";
 
-const todos = [
-    {
-        id: 1,
-        title: 'Belanja',
-        isCompleted: false,
-    },
-    {
-        id: 2,
-        title: 'Cuci Motor',
-        isCompleted: true,
-    },
-    {
-        id: 3,
-        title: 'Isi Galon',
-        isCompleted: false,
-    },
-    {
-        id: 4,
-        title: 'Cuci Mobik',
-        isCompleted: true,
-    }
-]
-
 function Activities() {
+    const activities = useSelector((state) => state.todo.activities);
     return (
         <>
-            {todos.map(
+            {activities.map(
                 (todo) => <Todo
                     key={`key-${todo.id}`}
                     id={`todo-${todo.id}`}
